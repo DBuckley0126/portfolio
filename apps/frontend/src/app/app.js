@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { ReactComponent as Logo } from '../assets/logo.svg';
+import star from '../assets/star.svg';
+import TestComponent from './TestComponent';
 
-import { ReactComponent as Logo } from './logo.svg';
-import star from './star.svg';
-
+import { Route, Link } from 'react-router-dom';
 const StyledApp = styled.div`
   font-family: sans-serif;
   min-width: 300px;
@@ -131,7 +132,6 @@ const StyledApp = styled.div`
     margin-right: 4px;
   }
 `;
-
 export function App() {
   return (
     <StyledApp>
@@ -140,8 +140,9 @@ export function App() {
         <h1>Welcome to frontend!</h1>
       </header>
       <main>
+        <TestComponent bg="red" />
         <h2>Resources &amp; Tools</h2>
-        <p>Thank you for using and showing some ♥ for Nx.</p>
+        <p>Thank you for using and showing some ♥ fo Nx.</p>
         <div className="flex github-star-container">
           <a
             href="https://github.com/nrwl/nx"
@@ -223,8 +224,44 @@ nx affected:e2e
   `}</pre>
         </details>
       </main>
+
+      {/* START: routes */}
+      {/* These routes and navigation have been generated for you */}
+      {/* Feel free to move and update them to fit your needs */}
+      <br />
+      <hr />
+      <br />
+      <div role="navigation">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/page-2">Page 2</Link>
+          </li>
+        </ul>
+      </div>
+      <Route
+        path="/"
+        exact
+        render={() => (
+          <div>
+            This is the generated root route.{' '}
+            <Link to="/page-2">Click here for page 2.</Link>
+          </div>
+        )}
+      />
+      <Route
+        path="/page-2"
+        exact
+        render={() => (
+          <div>
+            <Link to="/">Click here to go back to root page.</Link>
+          </div>
+        )}
+      />
+      {/* END: routes */}
     </StyledApp>
   );
 }
-
 export default App;
