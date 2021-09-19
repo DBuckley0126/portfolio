@@ -1,9 +1,5 @@
 {
-	"extends": [
-		"plugin:cypress/recommended",
-		"plugin:chai-friendly/recommended",
-		"../../.eslintrc.json"
-	],
+	"extends": ["plugin:cypress/recommended", "plugin:chai-friendly/recommended", "../../.eslintrc.json"],
 	"ignorePatterns": ["!**/*"],
 	"overrides": [
 		{
