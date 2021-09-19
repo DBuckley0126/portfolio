@@ -4,15 +4,11 @@
 	"integrationFolder": "./src/integration",
 	"modifyObstructiveCode": false,
 	"supportFile": "./src/support/index.js",
-	"pluginsFile": false,
+	"pluginsFile": "./src/plugins",
 	"video": false,
 	"videosFolder": "../../dist/cypress/apps/ui-e2e/videos",
 	"screenshotsFolder": "../../dist/cypress/apps/ui-e2e/screenshots",
 	"screenshotOnRunFailure": false,
 	"chromeWebSecurity": false,
-	"baseUrl": "http://localhost:4400",
-	"component": {
-    "componentFolder": "src/integration",
-    "testFiles": "**/*spec.{js,jsx,ts,tsx}"
-  }
+	"baseUrl": "http://localhost:4400"
 }

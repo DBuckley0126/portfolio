@@ -184,7 +184,9 @@
 					"executor": "@nrwl/cypress:cypress",
 					"options": {
 						"cypressConfig": "apps/ui-e2e/cypress.json",
-						"devServerTarget": "ui:storybook"
+						"devServerTarget": "ui:storybook",
+						"watch": true,
+						"exit": false
 					},
 					"configurations": {
 						"ci": {
