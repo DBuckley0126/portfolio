@@ -7,6 +7,7 @@ it('Should empty the field when clicking the cross', () => {
 			storyName: 'primary',
 		})
 	)
+
 	cy.get('#button').click()
 	cy.get('#warning').should('contain.text', 'You need to fill in the form!')
 })

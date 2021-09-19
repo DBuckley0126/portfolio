@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { ReactComponent as Logo } from '../assets/logo.svg';
-import star from '../assets/star.svg';
-import { TestComponent } from '@portfolio/ui';
+import styled from 'styled-components'
+import { TestComponent } from '@portfolio/ui'
+import { Route, Link } from 'react-router-dom'
 
-import { Route, Link } from 'react-router-dom';
+import { ReactComponent as Logo } from '../assets/logo.svg'
+import star from '../assets/star.svg'
 
 const StyledApp = styled.div`
 	font-family: sans-serif;
@@ -132,13 +132,12 @@ const StyledApp = styled.div`
 		width: 16px;
 		margin-right: 4px;
 	}
-`;
+`
 
-export function App() {
+const App = () => {
 	return (
 		<StyledApp>
 			<header className="flex">
-			lkp'
 				<Logo width="75" height="75" />
 				<h1>Welcome to frontend!</h1>
 			</header>
@@ -212,7 +211,7 @@ nx g @nrwl/react:component xyz --project ui`}</pre>
 				</details>
 				<details>
 					<summary>View dependency graph</summary>
-					<pre>{`nx dep-graph`}</pre>
+					<pre>nx dep-graph</pre>
 				</details>
 				<details>
 					<summary>Run affected commands</summary>
@@ -269,6 +268,6 @@ nx affected:e2e
 			/>
 			{/* END: routes */}
 		</StyledApp>
-	);
+	)
 }
-export default App;
+export default App

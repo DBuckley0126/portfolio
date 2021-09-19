@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import styled from 'styled-components'
 
 const StyledFlex = styled.div`
@@ -10,13 +9,11 @@ const StyledFlex = styled.div`
 	background-color: ${({ bg }) => bg};
 `
 
-const TestComponent = ({ bg = 'red', name, onClick, number }) => {
-	return (
-		<StyledFlex bg={bg} onClick={onClick}>
-			{name}
-		</StyledFlex>
-	)
-}
+const TestComponent = ({ bg, name, onClick, number }) => (
+	<StyledFlex bg={bg} onClick={onClick || onClick}>
+		{name + number}
+	</StyledFlex>
+)
 
 TestComponent.propTypes = {
 	name: PropTypes.string.isRequired,
@@ -26,8 +23,9 @@ TestComponent.propTypes = {
 }
 
 TestComponent.defaultProps = {
-	name: 'Stranger',
 	number: 5,
+	bg: 'red',
+	onClick: null,
 }
 
 export default TestComponent

@@ -1,7 +1,0 @@
-
-
-{
-  "label": "Test Affected",
-  "type": "shell",
-  "command": "nx e2e ui-e2e --watch --no-exit --testingType=component"
-}
