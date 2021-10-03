@@ -1,6 +1,6 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles'
 
-const theme = createTheme({
+const unResponsiveTheme = createTheme({
 	typography: {
 		fontFamily: 'Source Sans Pro, Arial'
 	},
@@ -27,8 +27,8 @@ const theme = createTheme({
 	}
 })
 
-const easTheme = responsiveFontSizes(theme, {
+const theme = responsiveFontSizes(unResponsiveTheme, {
 	breakpoints: ['mobile', 'tablet', 'laptop', 'desktop']
 })
 
-export default easTheme
+export default theme

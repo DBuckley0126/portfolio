@@ -5,7 +5,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import * as ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
-import { easTheme } from '@portfolio/ui'
+import { theme } from '@portfolio/ui'
 import { BrowserRouter } from 'react-router-dom'
 import store from './store'
 import routes from './app/routes'
@@ -15,7 +15,7 @@ import '@fontsource/source-sans-pro'
 ReactDOM.render(
 	<Provider store={store}>
 		<StrictMode>
-			<ThemeProvider theme={easTheme}>
+			<ThemeProvider theme={theme}>
 				<BrowserRouter>
 					<AllRoutes routes={routes} />
 				</BrowserRouter>
