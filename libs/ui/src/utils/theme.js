@@ -1,21 +1,43 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles'
 
-const unResponsiveTheme = createTheme({
-	typography: {
-		fontFamily: 'Source Sans Pro, Arial'
-	},
+const colorTheme = createTheme({
 	palette: {
 		mode: 'light',
 		primary: {
-			main: '#e0e0e0',
-			light: '#ffffff',
-			dark: '#aeaeae'
+			main: '#FFFFFF'
 		},
 		secondary: {
-			main: '#c41e3a',
-			light: '#fd5964',
-			dark: '#8c0015'
+			main: '#000000'
+		},
+		gradient: {
+			first: 'linear-gradient(90deg, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 1) 50%, hsla(0, 0%, 0%, 1) 100%)',
+			second: 'linear-gradient(90deg, hsla(154, 100%, 76%, 1) 0%, hsla(234, 100%, 83%, 1) 50%, hsla(288, 100%, 81%, 1) 100%)'
 		}
+	}
+})
+
+const unResponsiveTheme = createTheme(colorTheme, {
+	typography: {
+		h1: {
+			fontFamily: 'Work SansVariable, Work Sans, Arial, Sans-Serif',
+			fontWeight: 800,
+			fontSize: '4.2rem',
+			fontColor: 'secondary.main'
+		},
+		subtitle1: {
+			fontFamily: 'Roboto, Arial, Sans-Serif',
+			fontWeight: 500,
+			fontSize: '1.5rem'
+		},
+		body1: {
+			fontFamily: 'Roboto, Arial, Sans-Serif'
+		},
+		button: {
+			fontFamily: 'Work SansVariable, Work Sans, Arial, Sans-Serif',
+			fontWeight: 800,
+			fontSize: '1.4rem'
+		},
+		fontFamily: 'Roboto, Arial, Sans-Serif'
 	},
 	breakpoints: {
 		values: {

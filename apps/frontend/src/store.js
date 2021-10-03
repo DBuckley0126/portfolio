@@ -4,7 +4,7 @@ import { setupListeners } from '@reduxjs/toolkit/query'
 import {
 	COUNTER_FEATURE_KEY,
 	counterReducer
-} from './app/Counter/store/counter.slice'
+} from './app/features/Counter/store/counter.slice'
 
 const store = configureStore({
 	reducer: {

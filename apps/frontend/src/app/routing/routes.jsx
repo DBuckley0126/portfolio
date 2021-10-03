@@ -1,5 +1,5 @@
-import Counter from './Counter/components/Counter'
-import Home from './Home/components/Home'
+import Counter from '../features/Counter/components/Counter'
+import Home from '../features/Home/views/Home'
 
 const routes = [
 	{

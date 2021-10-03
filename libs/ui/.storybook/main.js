@@ -1,5 +1,6 @@
 const path = require('path')
 const rootMain = require('../../../.storybook/main')
+
 const toPath = (filePath) => path.join(process.cwd(), filePath)
 module.exports = {
 	...rootMain,
@@ -28,7 +29,7 @@ module.exports = {
 				alias: {
 					...localConfig.resolve.alias,
 					'@emotion/core': toPath('node_modules/@emotion/react'),
-					'emotion-theming': toPath('node_modules/@emotion/react')
+					'emotion-theming': toPath('node_modules/@emotion/react'),
 				}
 			}
 		}

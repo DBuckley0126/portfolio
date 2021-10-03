@@ -1,0 +1,5 @@
+import '@fontsource/roboto/400.css'
+import '@fontsource/roboto/500.css'
+import '@fontsource/work-sans/variable.css'
+import '@fontsource/work-sans/800.css'
+import '@fontsource/work-sans/500.css'
