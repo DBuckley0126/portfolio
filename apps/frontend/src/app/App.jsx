@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { TestComponent } from '@portfolio/ui'
 import { Route, Link } from 'react-router-dom'
 
@@ -8,15 +7,11 @@ import star from '../assets/star.svg'
 import routes from './routes'
 import AllRoutes from './routing/AllRoutes'
 
-const StyledAppContainer = styled.div`
-	font-family: sans-serif;
-`
-
 const App = () => {
 	return (
-		<StyledAppContainer>
+		<div>
 			<AllRoutes routes={routes} />
-		</StyledAppContainer>
+		</div>
 	)
 }
 export default App

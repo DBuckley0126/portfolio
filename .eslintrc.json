@@ -1,0 +1,61 @@
+{
+	"root": true,
+	"ignorePatterns": ["**/*"],
+	"plugins": ["@nrwl/nx"],
+	"extends": ["airbnb", "airbnb/hooks", "plugin:prettier/recommended"],
+	"rules": {
+		"prettier/prettier": "error"
+	},
+	"overrides": [
+		{
+			"files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+			"env": {
+				"browser": true,
+				"commonjs": true,
+				"es6": true,
+				"jest": true,
+				"node": true
+			},
+			"rules": {
+				"comma-dangle": ["error", "never"],
+				"import/no-unresolved": ["off", { "paths": ["@portfolio/ui"] }],
+				"@nrwl/nx/enforce-module-boundaries": [
+					"error",
+					{
+						"enforceBuildableLibDependency": true,
+						"allow": [],
+						"depConstraints": [
+							{
+								"sourceTag": "*",
+								"onlyDependOnLibsWithTags": ["*"]
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"files": ["*.ts", "*.tsx"],
+			"extends": ["plugin:@nrwl/nx/typescript"],
+			"rules": {}
+		},
+		{
+			"files": ["*.js", "*.jsx"],
+			"extends": ["plugin:@nrwl/nx/javascript"],
+			"rules": {
+				"prefer-arrow-callback": "error",
+				"react/jsx-props-no-spreading": "warn",
+				"react/forbid-foreign-prop-types": [
+					"warn",
+					{ "allowInPropTypes": true }
+				]
+			}
+		},
+		{
+			"files": ["*.jsx"],
+			"rules": {
+				"react/react-in-jsx-scope": "off"
+			}
+		}
+	]
+}
