@@ -7,8 +7,9 @@ import { Provider } from 'react-redux'
 
 import { easTheme } from '@portfolio/ui'
 import { BrowserRouter } from 'react-router-dom'
-import App from './app/App'
 import store from './store'
+import routes from './app/routes'
+import AllRoutes from './app/routing/AllRoutes'
 import '@fontsource/source-sans-pro'
 
 ReactDOM.render(
@@ -16,7 +17,7 @@ ReactDOM.render(
 		<StrictMode>
 			<ThemeProvider theme={easTheme}>
 				<BrowserRouter>
-					<App />
+					<AllRoutes routes={routes} />
 				</BrowserRouter>
 			</ThemeProvider>
 		</StrictMode>

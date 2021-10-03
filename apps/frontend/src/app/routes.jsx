@@ -1,11 +1,12 @@
 import Counter from './Counter/components/Counter'
+import Home from './Home/components/Home'
 
 const routes = [
 	{
 		path: '/',
 		description: 'root',
 		exact: true,
-		component: () => <h1>Log in</h1>
+		component: () => <Home />
 	},
 	{
 		path: '/counter',

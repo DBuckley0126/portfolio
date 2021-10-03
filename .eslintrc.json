@@ -56,6 +56,12 @@
 			"rules": {
 				"react/react-in-jsx-scope": "off"
 			}
+		},
+		{
+			"files": ["*.slice.js"],
+			"rules": {
+				"no-param-reassign": "off"
+			}
 		}
 	]
 }
