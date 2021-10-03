@@ -33,6 +33,7 @@ module.exports = {
 				 * Standard ESLint rule configurations
 				 * https://eslint.org/docs/rules
 				 */
+				'comma-dangle': ['error', 'never'],
 				'import/no-unresolved': ['off', { paths: ['@portfolio/ui'] }],
 				'array-callback-return': 'warn',
 				'dot-location': ['warn', 'property'],
