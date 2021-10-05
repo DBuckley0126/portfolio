@@ -2,7 +2,6 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable react/react-in-jsx-scope */
 import { ThemeProvider } from '@material-ui/core/styles'
-import CssBaseline from '@material-ui/core/CssBaseline'
 
 import theme from '../src/utils/theme'
 
@@ -15,7 +14,6 @@ import '@fontsource/work-sans/500.css'
 export const decorators = [
 	(Story) => (
 		<ThemeProvider theme={theme}>
-			<CssBaseline />
 			<Story />
 		</ThemeProvider>
 	)

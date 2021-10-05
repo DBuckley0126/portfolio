@@ -1,22 +1,29 @@
-import { Box } from '@mui/material'
+import { Box, Button } from '@mui/material'
 import { OutlineSquareButton } from '@portfolio/ui'
-import { useTheme } from '@material-ui/core/styles'
+
 import Title from '../components/Title'
 
 const Home = () => {
-	const theme = useTheme()
-
 	return (
 		<Box
-			display="flex"
-			flexDirection="column"
-			justifyContent="center"
-			alignItems="center"
-			width="100%"
-			height="100%"
+			sx={{
+				position: 'absolute',
+				top: '50%',
+				left: '50%',
+				transform: 'translate(-50%, -50%)',
+				display: 'flex',
+				flexDirection: 'column',
+				justifyContent: 'center',
+				alignItems: 'start',
+				width: 'fit-content',
+				height: 'auto',
+				m: 'auto'
+			}}
 		>
 			<Title />
-			<OutlineSquareButton />
+			<OutlineSquareButton sx={{ mt: 5 }}>
+				START MULTIPLAYER
+			</OutlineSquareButton>
 		</Box>
 	)
 }

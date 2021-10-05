@@ -10,8 +10,10 @@ const colorTheme = createTheme({
 			main: '#000000'
 		},
 		gradient: {
-			first: 'linear-gradient(90deg, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 1) 50%, hsla(0, 0%, 0%, 1) 100%)',
-			second: 'linear-gradient(90deg, hsla(154, 100%, 76%, 1) 0%, hsla(234, 100%, 83%, 1) 50%, hsla(288, 100%, 81%, 1) 100%)'
+			blackOut:
+				'linear-gradient(135deg, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 1) 50%, hsla(0, 0%, 0%, 1) 100%)',
+			fullColor:
+				'linear-gradient(135deg, hsla(154, 100%, 76%, 1) 0%, hsla(234, 100%, 83%, 1) 50%, hsla(288, 100%, 81%, 1) 100%)'
 		}
 	}
 })
@@ -35,7 +37,7 @@ const unResponsiveTheme = createTheme(colorTheme, {
 		button: {
 			fontFamily: 'Work SansVariable, Work Sans, Arial, Sans-Serif',
 			fontWeight: 800,
-			fontSize: '1.4rem'
+			fontSize: '1.1rem'
 		},
 		fontFamily: 'Roboto, Arial, Sans-Serif'
 	},

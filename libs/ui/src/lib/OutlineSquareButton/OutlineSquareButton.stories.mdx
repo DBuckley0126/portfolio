@@ -1,0 +1,62 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+
+import OutlineSquareButton from './OutlineSquareButton.jsx'
+
+<Meta
+	title="MDX/OutlineSquareButton"
+	component={OutlineSquareButton}
+	argTypes={{
+		sx: {
+			name: 'Material UI style system prop',
+			description: 'Apply emotion styling with theme',
+			control: 'object',
+			default: {}
+		},
+		children: {
+			name: 'React elements',
+			description: 'Pass in text as child'
+    }
+  }}
+
+/>
+
+export const Template = (args) => (
+	<OutlineSquareButton {...args}>Test button</OutlineSquareButton>
+)
+
+# OutlineSquareButton
+
+A general use button built ontop of **Material UI button** being animated with Framer Motion.
+When focused created a gradient effect across the outline and text.
+Font size automatically resizes based on device.
+
+Made to Web Content Accessibility Guidelines.
+
+## Libaries
+
+-   [Material UI](https://mui.com/getting-started/usage/)
+-   [Framer Motion](https://www.framer.com/docs/)
+
+<ArgsTable of={OutlineSquareButton} />
+
+### Primary
+
+<Canvas>
+	<Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+<Canvas>
+	<Story
+		name="Custom sizing"
+		args={{
+			sx: {
+				width: 300,
+				height: 100
+			}
+		}}
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>
+
+

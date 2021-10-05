@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const RootLayout = ({ children }) => {
 	return (
-		<Box width="100vw" height="100vh">
+		<Box width="100vw" height="100vh" position="relative">
 			{children}
 		</Box>
 	)

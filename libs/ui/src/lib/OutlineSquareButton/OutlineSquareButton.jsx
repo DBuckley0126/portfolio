@@ -1,65 +1,96 @@
-import { useState, useEffect } from 'react'
-import { Button, Box } from '@mui/material'
-import { motion, useSpring } from 'framer-motion'
-import { css } from '@emotion/react'
+import { useState } from 'react'
+import { ButtonBase, Box, Typography } from '@mui/material'
+import { motion } from 'framer-motion'
 import { useTheme } from '@material-ui/core/styles'
-import styled from '@emotion/styled'
+import PropTypes from 'prop-types'
 
-const MotionFlex = styled(motion.div)`
-	display: flex;
-	width: auto;
-	height: 100px;
-	justify-content: center;
-	align-items: center;
-`
+const textClipStyling = {
+	backgroundClip: 'text',
+	WebkitBackgroundClip: 'text',
+	WebkitTextFillColor: 'transparent'
+}
 
-const OutlineSquareButton = () => {
+const OutlineSquareButton = ({ sx, children, ...props }) => {
 	const theme = useTheme()
+	const [hovered, setHovered] = useState(false)
 
-	const colorSpring = useSpring(theme?.palette?.gradient?.first)
-	const [backgroundColor, setBackgroundColor] = useState(
-		theme?.palette?.gradient?.first
-	)
-	useEffect(
-		() =>
-			colorSpring.onChange((latest) => {
-				setBackgroundColor(latest)
-			}),
-		[]
-	)
+	const outlineVariants = {
+		hovered: {
+			background: theme?.palette?.gradient?.fullColor
+		},
+		unHovered: {
+			background: theme?.palette?.gradient?.blackOut
+		}
+	}
+
+	const textVariants = {
+		hovered: {
+			background: theme?.palette?.gradient?.fullColor,
+			...textClipStyling
+		},
+		unHovered: {
+			background: theme?.palette?.gradient?.blackOut,
+			...textClipStyling
+		}
+	}
 
 	return (
-		<Button onClick={() => console.log('red')}>
-			<MotionFlex
-				onHoverStart={() =>
-					colorSpring.set(theme?.palette?.gradient?.second)
-				}
-				onHoverEnd={() =>
-					colorSpring.set(theme?.palette?.gradient?.first)
-				}
-				style={{ background: backgroundColor }}
+		<ButtonBase
+			onHoverStart={() => setHovered(true)}
+			onHoverEnd={() => setHovered(false)}
+			initial="unHovered"
+			animate={hovered ? 'hovered' : 'unHovered'}
+			variants={outlineVariants}
+			onFocus={() => {
+				setHovered(true)
+			}}
+			onBlur={() => setHovered(false)}
+			sx={{
+				display: 'flex',
+				width: 'fit-content',
+				height: 'auto',
+				justifyContent: 'center',
+				alignItems: 'center',
+				p: '6px',
+				...sx
+			}}
+			transition={{ type: 'tween', ease: 'easeInOut' }}
+			component={motion.div}
+			{...props}
+		>
+			<Box
+				sx={{
+					backgroundColor: theme?.palette?.primary?.main,
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					px: '18px',
+					py: '8px',
+					width: 'calc(100% - 12px)',
+					height: '-webkit-fill-available'
+				}}
 			>
-				<Box
-					display="flex"
-					px={15}
-					width="calc(100% - 10px)"
-					height="calc(100% - 10px)"
-					sx={{ backgroundColor: theme?.palette?.primary?.main }}
+				<Typography
+					component={motion.span}
+					variants={textVariants}
+					variant="button"
+					transition={{ type: 'tween', ease: 'easeInOut' }}
 				>
-					<h4
-						css={css`
-							background: ${backgroundColor};
-							background-clip: text;
-							-webkit-background-clip: text;
-							-webkit-text-fill-color: transparent;
-						`}
-					>
-						This is a button
-					</h4>
-				</Box>
-			</MotionFlex>
-		</Button>
+					{children}
+				</Typography>
+			</Box>
+		</ButtonBase>
 	)
+}
+
+OutlineSquareButton.propTypes = {
+	children: PropTypes.string,
+	sx: PropTypes.object
+}
+
+OutlineSquareButton.defaultProps = {
+	children: '',
+	sx: {}
 }
 
 export default OutlineSquareButton

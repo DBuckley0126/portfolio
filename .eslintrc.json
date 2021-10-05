@@ -44,10 +44,15 @@
 			"extends": ["plugin:@nrwl/nx/javascript"],
 			"rules": {
 				"prefer-arrow-callback": "error",
-				"react/jsx-props-no-spreading": "warn",
+
 				"react/forbid-foreign-prop-types": [
 					"warn",
 					{ "allowInPropTypes": true }
+				],
+				"react/jsx-props-no-spreading": "warn",
+				"react/forbid-prop-types": [
+					"warn",
+					{ "forbid": ["any", "array"] }
 				]
 			}
 		},
