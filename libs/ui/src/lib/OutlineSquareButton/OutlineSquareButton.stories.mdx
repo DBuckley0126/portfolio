@@ -7,22 +7,19 @@ import OutlineSquareButton from './OutlineSquareButton.jsx'
 	component={OutlineSquareButton}
 	argTypes={{
 		sx: {
-			name: 'Material UI style system prop',
-			description: 'Apply emotion styling with theme',
-			control: 'object',
-			default: {}
+			description: 'Material UI style system prop',
+			type: { name: 'object', required: false },
+			defaultValue: {}
 		},
 		children: {
-			name: 'React elements',
-			description: 'Pass in text as child'
-    }
-  }}
-
+			description: 'Pass in text as child',
+			defaultValue: 'Test button',
+			type: { name: 'string', required: false }
+		}
+	}}
 />
 
-export const Template = (args) => (
-	<OutlineSquareButton {...args}>Test button</OutlineSquareButton>
-)
+export const Template = (args) => <OutlineSquareButton {...args} />
 
 # OutlineSquareButton
 
@@ -36,8 +33,6 @@ Made to Web Content Accessibility Guidelines.
 
 -   [Material UI](https://mui.com/getting-started/usage/)
 -   [Framer Motion](https://www.framer.com/docs/)
-
-<ArgsTable of={OutlineSquareButton} />
 
 ### Primary
 
@@ -58,5 +53,3 @@ Made to Web Content Accessibility Guidelines.
 		{Template.bind({})}
 	</Story>
 </Canvas>
-
-
