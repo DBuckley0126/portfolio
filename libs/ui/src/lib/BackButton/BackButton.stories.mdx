@@ -1,31 +1,25 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 
-import OutlineSquareButton from './OutlineSquareButton.jsx'
+import BackButton from './BackButton.jsx'
 
 <Meta
-	title="OutlineSquareButton"
-	component={OutlineSquareButton}
+	title="BackButton"
+	component={BackButton}
 	argTypes={{
 		sx: {
 			description: 'Material UI style system prop',
 			type: { name: 'object', required: false },
 			defaultValue: {}
-		},
-		children: {
-			description: 'Pass in text as child',
-			defaultValue: 'Test button',
-			type: { name: 'string', required: false }
 		}
 	}}
 />
 
-export const Template = (args) => <OutlineSquareButton {...args} />
+export const Template = (args) => <BackButton {...args} />
 
-# OutlineSquareButton
+# BackButton
 
-A general use button built ontop of **Material UI button** being animated with Framer Motion.
-When hovered created a gradient effect across the outline and text.
-Font size automatically resizes based on device.
+A back navigation button built ontop of **Material UI button** being animated with Framer Motion.
+When hovered applies a backwards motion with the arrow.
 
 Made to Web Content Accessibility Guidelines with customised focus styling.
 
@@ -45,8 +39,7 @@ Made to Web Content Accessibility Guidelines with customised focus styling.
 		name="Custom styling"
 		args={{
 			sx: {
-				width: 300,
-				height: 100
+				borderWidth: 1
 			}
 		}}
 	>

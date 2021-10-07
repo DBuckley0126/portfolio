@@ -13,10 +13,13 @@ const textClipStyling = {
 const OutlineSquareButton = ({ sx, children, ...props }) => {
 	const theme = useTheme()
 	const [hovered, setHovered] = useState(false)
+	const [keyboardFocused, setKeyboardFocus] = useState(false)
 
 	const outlineVariants = {
 		hovered: {
-			background: theme?.palette?.gradient?.fullColor
+			background: keyboardFocused
+				? theme?.palette?.gradient.accessibility
+				: theme?.palette?.gradient?.fullColor
 		},
 		unHovered: {
 			background: theme?.palette?.gradient?.blackOut
@@ -25,7 +28,9 @@ const OutlineSquareButton = ({ sx, children, ...props }) => {
 
 	const textVariants = {
 		hovered: {
-			background: theme?.palette?.gradient?.fullColor,
+			background: keyboardFocused
+				? theme?.palette?.gradient.blackOut
+				: theme?.palette?.gradient?.fullColor,
 			...textClipStyling
 		},
 		unHovered: {
@@ -41,10 +46,14 @@ const OutlineSquareButton = ({ sx, children, ...props }) => {
 			initial="unHovered"
 			animate={hovered ? 'hovered' : 'unHovered'}
 			variants={outlineVariants}
-			onFocus={() => {
+			onFocusVisible={() => {
 				setHovered(true)
+				setKeyboardFocus(true)
 			}}
-			onBlur={() => setHovered(false)}
+			onBlur={() => {
+				setHovered(false)
+				setKeyboardFocus(false)
+			}}
 			sx={{
 				display: 'flex',
 				width: 'fit-content',

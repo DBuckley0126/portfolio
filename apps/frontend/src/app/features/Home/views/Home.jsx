@@ -1,5 +1,5 @@
 import { Box, Button } from '@mui/material'
-import { OutlineSquareButton } from '@portfolio/ui'
+import { OutlineSquareButton, BackButton } from '@portfolio/ui'
 
 import Title from '../components/Title'
 
@@ -24,6 +24,7 @@ const Home = () => {
 			<OutlineSquareButton sx={{ mt: 5 }}>
 				START MULTIPLAYER
 			</OutlineSquareButton>
+			<BackButton />
 		</Box>
 	)
 }

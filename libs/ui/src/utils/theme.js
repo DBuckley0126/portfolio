@@ -9,7 +9,12 @@ const colorTheme = createTheme({
 		secondary: {
 			main: '#000000'
 		},
+		accessibility: {
+			main: '#0d15ff'
+		},
 		gradient: {
+			accessibility:
+				'linear-gradient(135deg, hsla(238 100% 53% 1) 0%, hsla(238 100% 53% 1) 50%, hsla(238 100% 53% 1) 100%)',
 			blackOut:
 				'linear-gradient(135deg, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 1) 50%, hsla(0, 0%, 0%, 1) 100%)',
 			fullColor:
